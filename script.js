@@ -1,6 +1,6 @@
 var carta1 = {
   nome: "Sonic",
-  imagem: "https://pbs.twimg.com/media/D5xZ35XWkAImu5G.png",
+  imagem: "./imagens/Sonic.png",
   atributos: {
     ataque: 9,
     inteligência: 7,
@@ -10,7 +10,7 @@ var carta1 = {
 
 var carta2 = {
   nome: "Tails",
-  imagem: "https://data.whicdn.com/images/245906081/original.png",
+  imagem: "./imagens/Tails.png",
   atributos: {
     ataque: 7,
     inteligência: 10,
@@ -20,8 +20,7 @@ var carta2 = {
 
 var carta3 = {
   nome: "Knucles",
-  imagem:
-    "http://images6.fanpop.com/image/photos/38800000/Knuckles-1-sonic-boom-2014-tv-series-38864365-819-431.png",
+  imagem: "./imagens/Knuckles.png",
   atributos: {
     ataque: 10,
     inteligência: 7,
@@ -31,8 +30,7 @@ var carta3 = {
 
 var carta4 = {
   nome: "Amy Rose",
-  imagem:
-    "https://img.796t.com/res/2021/02-04/06/74b7b1feed6892b6313d990c35cbff88.jpg",
+  imagem: "./imagens/Emy.jpg",
   atributos: {
     ataque: 7,
     inteligência: 8,
@@ -42,7 +40,7 @@ var carta4 = {
 
 var carta5 = {
   nome: "Doutor Eggman",
-  imagem: "https://images5.alphacoders.com/117/1173358.jpg",
+  imagem: "./imagens/Eggman.jpg",
   atributos: {
     ataque: 8,
     inteligência: 9,
@@ -56,12 +54,12 @@ var cartaPc;
 var cartaJogador;
 
 function sortearCarta() {
-  var numeroCartaPc = parseInt(Math.random() * 6);
+  var numeroCartaPc = parseInt(Math.random() * 5);
   cartaPc = cartas[numeroCartaPc];
 
-  var numeroCartaJogador = parseInt(Math.random() * 6);
+  var numeroCartaJogador = parseInt(Math.random() * 5);
   while (numeroCartaPc == numeroCartaJogador) {
-    numeroCartaJogador = parseInt(Math.random() * 6);
+    numeroCartaJogador = parseInt(Math.random() * 5);
   }
   cartaJogador = cartas[numeroCartaJogador];
   document.getElementById("btnSortear").disabled = true;
@@ -88,11 +86,11 @@ function jogar() {
   var divResultado = document.getElementById("resultado");
 
   if (valorCartaJogador > valorCartaPc) {
-    divResultado.innerHTML = "<p class='resultado-final'>Você venceu!<br> Aperte F5 para recomeçar</p>";
+    divResultado.innerHTML = "<p class='resultado-final'>Você venceu!</p>";
   } else if (valorCartaPc > valorCartaJogador) {
-    divResultado.innerHTML = "<p class='resultado-final'>Você perdeu<br> Aperte F5 para recomeçar</p>";
+    divResultado.innerHTML = "<p class='resultado-final'>Você perdeu.</p>";
   } else {
-    divResultado.innerHTML = "<p class='resultado-final'>Empatou<br> Aperte F5 para recomeçar</p>";
+    divResultado.innerHTML = "<p class='resultado-final'>Empatou</p>";
   }
   exibirCartaPc();
   // document.getElementById("btnJogar").disabled = true;
@@ -100,8 +98,8 @@ function jogar() {
 
 function exibirCartaJogador() {
   var divCartaJogador = document.getElementById("carta-jogador");
-  divCartaJogador.style.backgroundImage = `url(${cartaJogador.imagem})`;
-  //divCartaJogador.style.backgroundImage = "url(" + cartaJogador.imagem +")"
+  divCartaJogador.style.backgroundImage = "url(" + cartaJogador.imagem +")";
+  
   var moldura =
     '<img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/card-super-trunfo-transparent.png" style=" width: inherit; height: inherit; position: absolute;">';
   var nome = `<p class="carta-subtitle">${cartaJogador.nome}</p>`;
