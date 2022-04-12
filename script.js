@@ -88,11 +88,11 @@ function jogar() {
   var divResultado = document.getElementById("resultado");
 
   if (valorCartaJogador > valorCartaPc) {
-    divResultado.innerHTML = "<p class='resultado-final'>Você venceu!</p>";
+    divResultado.innerHTML = "<p class='resultado-final'>Você venceu!<br> Aperte F5 para recomeçar</p>";
   } else if (valorCartaPc > valorCartaJogador) {
-    divResultado.innerHTML = "<p class='resultado-final'>Você perdeu.</p>";
+    divResultado.innerHTML = "<p class='resultado-final'>Você perdeu<br> Aperte F5 para recomeçar</p>";
   } else {
-    divResultado.innerHTML = "<p class='resultado-final'>Empatou</p>";
+    divResultado.innerHTML = "<p class='resultado-final'>Empatou<br> Aperte F5 para recomeçar</p>";
   }
   exibirCartaPc();
   // document.getElementById("btnJogar").disabled = true;
